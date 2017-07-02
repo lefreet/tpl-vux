@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: 'app'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+  name: 'app'
+}
 </script>
 
 <style lang="less">
@@ -15,5 +15,9 @@ export default {
 
 body {
   background-color: #fbf9fe;
+}
+
+html,body,#app {
+  height: 100%;
 }
 </style>

@@ -13,7 +13,7 @@ function resolve (dir) {
 
 let webpackConfig = {
   entry: {
-    app: './src/main.js'
+    app: './src/App/main.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -25,15 +25,12 @@ let webpackConfig = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      {{#if_eq build "standalone"}}
       'vue$': 'vue/dist/vue.esm.js',
-      {{/if_eq}}
       '@': resolve('src')
     }
   },
   module: {
     rules: [
-      {{#lint}}
       {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
@@ -43,7 +40,6 @@ let webpackConfig = {
           formatter: require('eslint-friendly-formatter')
         }
       },
-      {{/lint}}
       {
         test: /\.vue$/,
         loader: 'vue-loader',
