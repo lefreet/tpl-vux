@@ -10,9 +10,9 @@
 
 import { Group, Cell } from 'vux'
 
-const menus = {
-  '示例': '/demo'
-}
+const menus = {{{#demo}}
+  'demo': '/demo'
+{{/demo}}}
 
 export default {
   components: { Group, Cell },

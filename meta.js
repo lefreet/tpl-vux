@@ -17,13 +17,21 @@ module.exports = {
     "description": {
       "type": "string",
       "required": true,
-      "message": "项目描述"
+      "message": "项目描述",
+      "default": "A vue project"
     },
     "author": {
       "type": "string",
       "message": "作者"
+    },
+    "demo": {
+      "type": "confirm",
+      "message": "是否需要demo？" 
     }
   },
-  "filters": {},
-  "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
+  "filters": {
+    "src/demo": "demo",
+    "static/demo": "demo"
+  },
+  "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev"
 };
