@@ -124,11 +124,9 @@ npm install
       axios.defaults.baseURL = 'http://localhost:8080/'
     }
   
-  /*
-  * 很多教程上有这种用法，将方法挂载在vue实例上
-  * 不是很推荐将这种将接口逻辑耦合到视图的做法，随着业务的复杂代码会变得难以维护
-  * 请参考模板中demo的方式，将api独立成一个类
-  */
+  // 很多教程上有如下用法，将方法挂载在vue实例上
+  // 不是很推荐将这种将接口逻辑耦合到视图的做法，随着业务的复杂代码会变得难以维护
+  // 请参考模板中demo的方式，将api独立成一个类
 	Vue.prototype.$http = axios
    this.$http.get('rain/grade', {params: params})
    .then(calback)
@@ -155,7 +153,7 @@ npm install
 6. ##### 开启gizip编译部署 *
 `config/index.js-->productionGzip: true`，有效减小文件体积。服务器需开启gzip。
 
-7. ##### 作为二级应用部署后静态文件引用路径错误
+7. ##### 作为二级应用部署后静态文件引用路径错误 *
 `config/index.js-->build.assetsPublicPath: '/'`修改为`''`。
 
 
