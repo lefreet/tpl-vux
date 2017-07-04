@@ -10,9 +10,9 @@
 
 import { Group, Cell } from 'vux'
 
-const menus = {{{#demo}}
+const menus = {{{#if_eq demo "Yes"}}
   'demo': '/demo'
-{{/demo}}}
+{{/if_eq}}}
 
 export default {
   components: { Group, Cell },
