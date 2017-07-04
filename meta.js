@@ -30,8 +30,8 @@ module.exports = {
     }
   },
   "filters": {
-    "src/demo": "demo",
-    "static/demo": "demo"
+    "src/demo/*": "demo",
+    "static/demo/*": "demo"
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev"
 };
