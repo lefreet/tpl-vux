@@ -7,10 +7,10 @@ Vue.use(Router)
 const routes = [{
   path: '/',
   component: resolve => require(['./menu.vue'], resolve)
-}{{#if_eq demo "Yes"}}, {
+}{{#demo}}, {
   path: '/demo',
   component: resolve => require(['../demo/index.vue'], resolve)
-}{{/if_eq}}]
+}{{/demo}}]
 
 export default new Router({
   routes
