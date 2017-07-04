@@ -116,7 +116,7 @@ npm install
 2. ##### 调整编译方式 *
 `build/webpack.dev.conf.js-->devtool:'#cheap-module-eval-source-map'`修改为`#cheap-module-source-map'`，修改后能断点调试。
 
-3. ##### ajax
+3. ##### ajax *
 官方推荐[axios](https://github.com/mzabriskie/axios)。全局接口路径调整（类似珍珠中debug-config的配置），统一放在`/src/main.js`中：
 
 	```js
