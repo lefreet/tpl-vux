@@ -119,7 +119,11 @@ npm install
 3. ##### ajax *
 官方推荐[axios](https://github.com/mzabriskie/axios)。全局接口路径调整（类似珍珠中debug-config的配置），统一放在`/src/main.js`中：
 
-
+	```js
+  if (process.env.NODE_ENV === 'development') {
+  		axios.defaults.baseURL = 'http:\/\/localhost:8080/'
+  }
+  ```
   
 很多教程上有如下用法，将方法挂载在vue实例上
 
