@@ -1,0 +1,14 @@
+{
+	"schema": {
+		"id": "主键",
+		"name": "名称",
+		"url": "网址"
+	},
+	"data": [
+		{"id": 1, "name": "vue", "url": "https://cn.vuejs.org/v2/guide/", "description": "基于数据驱动的，响应式mvvm框架"},
+		{"id": 2, "name": "vux", "url": "https://vux.li/#/", "description": "基于weui的移动端ui组件库"},
+		{"id": 3, "name": "vuex", "url": "https://vuex.vuejs.org/zh-cn/", "description": "vue的状态管理模式"},
+		{"id": 4, "name": "vue-router", "url": "https://router.vuejs.org/zh-cn/", "description": "vue的路由管理"},
+		{"id": 5, "name": "awesome-vue", "url": "https://github.com/vuejs/awesome-vue", "description": "vue资源集合"}
+	]
+}
