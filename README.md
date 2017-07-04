@@ -81,9 +81,12 @@
 - 代码高亮辅助: sublime下安装Vue Syntax Highlight，其它ide搜关键字应该也有类似的插件。
 
 ## 开发框架模板
+---
+
 - 基于ui组件库[vux](https://vux.li/#/)的官方模板做了一点点调整，使用过程中有什么问题欢迎提issue或者pr，项目地址：https://github.com/lefreet/tpl-vux。
  
 ### 1. 安装
+
 ```bash
 #vue的脚手架工具，安装在全局，如果已经安装过了，则不用执行这句
 npm install vue-cli -g 
@@ -111,33 +114,33 @@ npm install
 
 ### 2. 常用配置调整(带*号已在模板内处理)
 1. ##### 关闭eslint代码检查
-`.eslintignore`中配置不需要代码规范检查的文件夹或者文件名，支持配位符（为方便日后别人也能够维护你的代码，不建议关闭）。
+	`.eslintignore`中配置不需要代码规范检查的文件夹或者文件名，支持配位符（为方便日后别人也能够维护你的代码，不建议关闭）。
 
 2. ##### 调整编译方式 *
-`build/webpack.dev.conf.js-->devtool:'#cheap-module-eval-source-map'`修改为`#cheap-module-source-map'`，修改后能断点调试。
+	`build/webpack.dev.conf.js-->devtool:'#cheap-module-eval-source-map'`修改为`#cheap-module-source-map'`，修改后能断点调试。
 
 3. ##### ajax *
-官方推荐[axios](https://github.com/mzabriskie/axios)。全局接口路径调整（类似珍珠中debug-config的配置），统一放在`/src/main.js`中：
-
-```js
-if(process.env.NOE_ENV === 'development' {
-	axios.defaults.baseURL = 'http://localhost:8080/'
-}
-```
-
-很多教程上有如下用法，将方法挂载在vue实例上
-
-```js
-Vue.prototype.$http = axios
-this.$http.get('rain/grade', {params: params})
-.then(calback)
-.catch(calback)
-```
-  
-不是很推荐将这种将接口逻辑耦合到视图的做法，随着业务的复杂代码会变得难以维护。请参考模板中demo的方式，将api独立成一个类
+	官方推荐[axios](https://github.com/mzabriskie/axios)。全局接口路径调整（类似珍珠中debug-config的配置），统一放在`/src/main.js`中：
+	
+	```js
+	if(process.env.NOE_ENV === 'development' {
+		axios.defaults.baseURL = 'http://localhost:8080/'
+	}
+	```
+	
+	很多教程上有如下用法，将方法挂载在vue实例上
+	
+	```js
+	Vue.prototype.$http = axios
+	this.$http.get('rain/grade', {params: params})
+	.then(calback)
+	.catch(calback)
+	```
+	  
+	不是很推荐将这种将接口逻辑耦合到视图的做法，随着业务的复杂代码会变得难以维护。请参考模板中demo的方式，将api独立成一个类
 
 4. ##### 路由配置
-`src/App/router.js`，并可用webpack实现代码分割：
+	`src/App/router.js`，并可用webpack实现代码分割：
 
     ```js
     const routes = [{
@@ -148,19 +151,23 @@ this.$http.get('rain/grade', {params: params})
       component: resolve => require(['./water/index.vue'], resolve)
     }]
     ```  
-上面代码中，`/rain`和`/water`两个路由下的页面和依赖的文件就会分别被打包到两个独立的文件中，实现异步加载。
+	上面代码中，`/rain`和`/water`两个路由下的页面和依赖的文件就会分别被打包到两个独立的文件中，实现异步加载。
 
 5. ##### 开发端口修改 *
-`config/index.js-->dev.port:8080`
+	`config/index.js-->dev.port:8080`
 
 6. ##### 开启gizip编译部署 *
-`config/index.js-->productionGzip: true`，有效减小文件体积。服务器需开启gzip。
+	`config/index.js-->productionGzip: true`，有效减小文件体积。服务器需开启gzip。
 
 7. ##### 作为二级应用部署后静态文件引用路径错误 *
-`config/index.js-->build.assetsPublicPath: '/'`修改为`''`。
+	`config/index.js-->build.assetsPublicPath: '/'`修改为`''`。
 
 
+## demo教程
+---
 
+## 自定义模板
+---
  
 
 
